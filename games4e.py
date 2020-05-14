@@ -5,7 +5,9 @@ import itertools
 import random
 from collections import namedtuple
 
-import numpy as np
+#import numpy as np
+class np:
+    inf = 1000000000000000
 
 GameState = namedtuple('GameState', 'to_move, utility, board, moves')
 StochasticGameState = namedtuple('StochasticGameState', 'to_move, utility, board, moves, chance')

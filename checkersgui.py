@@ -112,7 +112,7 @@ def on_click(button):
             player = 'b'
             count += 1 
             """ AI algo here, change the algo here """
-            aimove = alpha_beta_cutoff_search(state=curState, game=ckrs, d=6, cutoff_test=None, eval_fn= ckrs.evaluation_function )
+            aimove = alpha_beta_cutoff_search(state=curState, game=ckrs, d=2, cutoff_test=None, eval_fn= ckrs.evaluation_function )
             """set the state based on move """
             print(curState.to_move, curState.moves)
             print("aimove:", aimove)
