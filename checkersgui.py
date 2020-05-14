@@ -82,6 +82,10 @@ def draw_board(state):
                 button.config(text=tex)
             else:
                 tex = board[i][k]# + str(k) + "," + str(i)
+                if( tex == 'w'):
+                    tex = 'r'
+                if( tex == 'W'):
+                    tex = 'R'
                 button.config(text=tex)
             if( board[i][k] == "#"):
                 button.config(text = " ", bg="black", state="disabled")
