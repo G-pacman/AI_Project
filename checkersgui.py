@@ -94,15 +94,17 @@ def on_click(button):
         updates board after move. Pretty cool right?!!??!?!"""
     global ckrs, move, count, player, result, loc, des, firstclick, curState, aimove, lastState
 
-    if (firstclick):
-        loc = get_coordinates(button)
+    x, y = get_coordinates(button)
+    board = curState.board
+    if( board[y][x].lower() == 'b' ):
         firstclick = False
+        loc = (x, y)
     else:
-        des = get_coordinates(button)
-        firstclick = True
+        des = (x, y)
         move = (loc, des)
         print("player move:", move)
         player = 'w'
+        firstclick = True
 
     if (firstclick and move in curState.moves):
         curState = copy.deepcopy( ckrs.result(curState, move) )
